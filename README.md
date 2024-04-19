@@ -1,8 +1,23 @@
-# Name
+# EUDI Wallet Kit React Native
 
-Description
+:heavy_exclamation_mark: **The project is WIP - do not use for production, errors and breaking changes are possible**
 
-Steps to complete setup:
-- [ ] Update this README.md file
-- [ ] Create a CODEOWNERS file
-- [ ] Create [MAINTAINERS.md](https://tac.openwallet.foundation/governance/maintainers-file-content/) file
+React Native wrapper for EUDI wallet reference libraries:
+- [EUDI Android Wallet Core](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core)
+- [EUDI iOS Wallet Kit](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit)
+
+## Installation
+
+```sh
+npm install eudi-wallet-kit-react-native
+```
+
+## Usage
+
+TODO
+
+Please refer to [minimal example app](./example) as a general usage example.
+
+## Contributing
+
+See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
