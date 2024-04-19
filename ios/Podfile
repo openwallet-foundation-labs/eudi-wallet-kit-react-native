@@ -1,0 +1,10 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '14.0'
+
+plugin "cocoapods-spm"
+
+target 'EudiWalletKitReactNative' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  spm_pkg "EudiWalletKit", :url => "https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit.git", :branch => "main"
+end

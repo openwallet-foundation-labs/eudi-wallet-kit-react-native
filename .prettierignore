@@ -1,0 +1,7 @@
+.yarn/
+ios/
+android/
+node_modules/
+*.yml
+*.md
+
