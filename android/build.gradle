@@ -97,15 +97,14 @@ dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
   // EUDI Wallet lib
-  // TODO: Start using latest snapshot again after actual release will be fixed or a new one will be published
-  implementation "eu.europa.ec.eudi:eudi-lib-android-wallet-core:0.5.2-SNAPSHOT"
+  implementation "eu.europa.ec.eudi:eudi-lib-android-wallet-core:0.5.4-SNAPSHOT"
   implementation "androidx.biometric:biometric-ktx:1.2.0-alpha05"
 
   // OWF identity lib
-  api ("com.android.identity:identity-credential:20231002") {
+  implementation ("com.android.identity:identity-credential:20231002") {
     exclude group: "org.bouncycastle"
   }
-  api ("com.android.identity:identity-credential-android:20231002") {
+  implementation ("com.android.identity:identity-credential-android:20231002") {
     exclude group: "org.bouncycastle"
   }
 

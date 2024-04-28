@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentActivity
 import com.dsr.eudi.walletkit.reactnative.biometry.UserAuthenticationType
 import com.dsr.eudi.walletkit.reactnative.biometry.showBiometricPrompt
 import com.dsr.eudi.walletkit.reactnative.model.JSDisclosedDocument
+import com.dsr.eudi.walletkit.reactnative.model.JSDocument
 import com.dsr.eudi.walletkit.reactnative.model.JSEudiWalletConfig
 import com.dsr.eudi.walletkit.reactnative.model.JSTransferEvent
 import com.dsr.eudi.walletkit.reactnative.utils.CertUtils
@@ -95,7 +96,8 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
 
         val resultArray = Arguments.createArray().apply {
           documentsList.forEach {
-            pushMap(JsonUtils.convertObjectToMap(it))
+            val documentMap = JsonUtils.convertObjectToMap(JSDocument.fromDocument(it))
+            pushMap(documentMap)
           }
         }
 
@@ -116,7 +118,7 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
     scope.launch {
       try {
         val document = EudiWallet.getDocumentById(documentId)
-        val result = if(document != null) JsonUtils.convertObjectToMap(document) else null
+        val result = if(document != null) JsonUtils.convertObjectToMap(JSDocument.fromDocument(document)) else null
         promise.resolve(result)
       }
       catch (error: Throwable) {

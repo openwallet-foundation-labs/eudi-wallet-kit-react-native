@@ -21,6 +21,7 @@ data class JSRequestedDocument(
       )
     }
   }
+
   fun toRequestDocument(): RequestDocument {
     return RequestDocument(
       documentId,
