@@ -17,7 +17,6 @@ struct JSDocument: Encodable {
         // TODO: Find a way to resolve createdAt timestamp
         self.createdAt = nil
         self.namespaces = mdocModel.nameSpaces ?? [String]()
-        
         self.namespacedData = mdocModel.toJson(base64: false).mapValues {
             let orderedDictionary = $0 as! OrderedDictionary<String, Any>
             
