@@ -1,6 +1,6 @@
+import { Buffer } from '@craftzdog/react-native-buffer'
 import React, { useState } from 'react'
 import { StyleSheet, View, Text, Platform, Image } from 'react-native'
-import { Buffer } from "@craftzdog/react-native-buffer"
 import QRCode from 'react-native-qrcode-svg'
 
 const styles = StyleSheet.create({
@@ -33,16 +33,18 @@ export const QRCodeView: React.FC<Props> = ({ value, size }) => {
   const onQRGenerationError = () => {
     setIsInvalidQR(true)
   }
-  
+
   return (
     <View style={styles.container}>
-      { 
+      {
         // TODO: Remove this after Android/iOS QR content inconsistency fixed
-        Platform.OS === 'ios'
-        ? <Image source={{ uri: getBase64Uri(value) }} width={size} height={size} resizeMode='contain' /> 
-        : <QRCode ecl="L" value={value} size={size} onError={onQRGenerationError} />
-       }
-      { isInvalidQR && <Text style={styles.errorMessage}>{'QR generation error'}</Text> }
+        Platform.OS === 'ios' ? (
+          <Image source={{ uri: getBase64Uri(value) }} width={size} height={size} resizeMode="contain" />
+        ) : (
+          <QRCode ecl="L" value={value} size={size} onError={onQRGenerationError} />
+        )
+      }
+      {isInvalidQR && <Text style={styles.errorMessage}>{'QR generation error'}</Text>}
     </View>
   )
 }

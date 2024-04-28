@@ -86,10 +86,10 @@ export const ProximityPresentation: React.FC<Props> = () => {
         </Text>
       </View>
       <View style={{ height: qrContainerSize, width: qrContainerSize, ...styles.qrContainer }}>
-        { qrCodeContent && <QRCodeView value={qrCodeContent} size={qrSize} /> }
+        {qrCodeContent && <QRCodeView value={qrCodeContent} size={qrSize} />}
       </View>
       <View style={styles.bottomIconContainer}>
-        { isAndroid && <Text style={styles.secondaryHeaderText}>Or use the NFC</Text> }
+        {isAndroid && <Text style={styles.secondaryHeaderText}>Or use the NFC</Text>}
         <Icon style={{ marginTop: 8 }} name={bottomIconName} color={'black'} size={64} />
       </View>
     </SafeAreaView>

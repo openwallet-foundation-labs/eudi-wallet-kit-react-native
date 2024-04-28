@@ -49,10 +49,9 @@ export abstract class EudiWallet {
     sendSessionTerminationMessage: boolean = true,
     useTransportSpecificSessionTermination: boolean = false,
   ): void {
-    if(Platform.OS === 'android') {
+    if (Platform.OS === 'android') {
       EudiWalletModule.stopPresentation(sendSessionTerminationMessage, useTransportSpecificSessionTermination)
-    }
-    else {
+    } else {
       EudiWalletModule.stopPresentation()
     }
   }
