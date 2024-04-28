@@ -3,6 +3,7 @@ package com.dsr.eudi.walletkit.reactnative.utils
 import com.facebook.react.bridge.*
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -23,6 +24,10 @@ object JsonUtils {
 
   fun <T> parseJson(json: String, resultClass: Class<T>): T {
     return getDefaultGson().fromJson(json, resultClass)
+  }
+
+  fun <T> parseJson(json: String, typeToken: TypeToken<T>): T {
+    return getDefaultGson().fromJson(json, typeToken)
   }
 
   fun convertObjectToMap(obj: Any): WritableMap {
