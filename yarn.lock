@@ -1873,6 +1873,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@craftzdog/react-native-buffer@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "@craftzdog/react-native-buffer@npm:6.0.5"
+  dependencies:
+    ieee754: ^1.2.1
+    react-native-quick-base64: ^2.0.5
+  checksum: 921b8bc7f84778e355e81e475792399276d611a346a7e51b6266a45cf4aa82194beb3a8106af796ed143d958c8476070c59e3720c0eec0a3c31e368fbb08b350
+  languageName: node
+  linkType: hard
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -6626,6 +6636,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
+    "@craftzdog/react-native-buffer": ^6.0.5
     "@react-native/babel-preset": 0.73.21
     "@react-native/metro-config": 0.73.5
     "@react-native/typescript-config": 0.73.1
@@ -6644,6 +6655,7 @@ __metadata:
     react-native-device-info: ^10.13.1
     react-native-permissions: ^4.1.5
     react-native-qrcode-svg: ^6.3.0
+    react-native-quick-base64: ^2.0.8
     react-native-safe-area-context: ^4.9.0
     react-native-screens: ^3.29.0
     react-native-svg: ^15.0.0
@@ -11529,6 +11541,18 @@ __metadata:
     react-native: ">=0.63.4"
     react-native-svg: ">=13.2.0"
   checksum: 28b521084b300fef669b5743742ed78c6f8899ed8e2e31ee1ac2c908c4ce6fd44cb50d9eeb541a2326b1ff796f4d9288bca2d75e58129569f089f051142b68ff
+  languageName: node
+  linkType: hard
+
+"react-native-quick-base64@npm:^2.0.5, react-native-quick-base64@npm:^2.0.8":
+  version: 2.1.2
+  resolution: "react-native-quick-base64@npm:2.1.2"
+  dependencies:
+    base64-js: ^1.5.1
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 46f3b26f48b26978686b0c043336220d681e6a02af5abcf3eb4ab7b9216251d1eb2fac5c559e984d963e93f54bd9f323651daac09762196815558abbd551729b
   languageName: node
   linkType: hard
 

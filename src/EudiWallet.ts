@@ -2,7 +2,7 @@ import type { EudiWalletConfig } from './config'
 import type { TransferEventListener } from './events'
 import type { DisclosedDocument, Document } from './model'
 
-import { NativeModules } from 'react-native'
+import { NativeModules, Platform } from 'react-native'
 
 import { EudiWalletEventManager } from './EudiWalletEventManager'
 
@@ -49,7 +49,11 @@ export abstract class EudiWallet {
     sendSessionTerminationMessage: boolean = true,
     useTransportSpecificSessionTermination: boolean = false,
   ): void {
-    EudiWalletModule.stopPresentation(sendSessionTerminationMessage, useTransportSpecificSessionTermination)
+    if (Platform.OS === 'android') {
+      EudiWalletModule.stopPresentation(sendSessionTerminationMessage, useTransportSpecificSessionTermination)
+    } else {
+      EudiWalletModule.stopPresentation()
+    }
   }
 
   public static async loadSampleData(sampleDataFile?: string): Promise<void> {

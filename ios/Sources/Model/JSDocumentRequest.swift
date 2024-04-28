@@ -1,7 +1,7 @@
 import EudiWalletKit
 import Foundation
 
-struct JSDocumentRequest {
+struct JSDocumentRequest: Codable {
     let docType: String
     let requestItems: [JSDocumentItem]
     let readerAuth: JSReaderAuth
@@ -31,7 +31,7 @@ extension JSDocumentRequest {
     }
 }
 
-struct JSReaderAuth {
+struct JSReaderAuth: Codable {
     let readerCommonName: String
     let readerSignIsValid: Bool
     let readerCertificateIsTrusted: Bool

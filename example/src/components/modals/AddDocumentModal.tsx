@@ -1,7 +1,6 @@
 import { EudiWallet } from 'eudi-wallet-kit-react-native'
 import React, { useCallback, useState } from 'react'
-import { Button, Modal, StyleSheet, Text, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { Button, Modal, StyleSheet, Text, View, SafeAreaView } from 'react-native'
 
 import { IconButton } from '../buttons'
 
