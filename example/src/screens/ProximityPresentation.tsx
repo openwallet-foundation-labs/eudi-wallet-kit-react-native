@@ -3,8 +3,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 
 import { EudiWallet, TransferEventType } from 'eudi-wallet-kit-react-native'
 import React, { useEffect, useState } from 'react'
-import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { StyleSheet, Text, useWindowDimensions, View, SafeAreaView, Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { QRCodeView } from '../components/views'
@@ -39,9 +38,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginTop: 16,
   },
-  nfcOptionContainer: {
+  bottomIconContainer: {
     alignItems: 'center',
-    justifyContent: 'center',
     marginTop: 16,
   },
 })
@@ -75,23 +73,25 @@ export const ProximityPresentation: React.FC<Props> = () => {
   }, [])
 
   const { qrSize, qrContainerSize } = useQRSizesForWindow()
+
+  const isAndroid = Platform.OS === 'android'
+  const headerText = isAndroid ? 'Show QR or Tap' : 'Show QR'
+  const bottomIconName = isAndroid ? 'nfc' : 'bluetooth-transfer'
   return (
-    <SafeAreaView style={styles.container} edges={['left', 'right']}>
-      <ScrollView>
-        <View style={styles.headerContainer}>
-          <Text style={styles.primaryHeaderText}>Show QR or Tap</Text>
-          <Text style={styles.secondaryHeaderText}>
-            Show this QR code to access the necessary information for sharing
-          </Text>
-        </View>
-        <View style={{ height: qrContainerSize, width: qrContainerSize, ...styles.qrContainer }}>
-          {qrCodeContent && <QRCodeView value={qrCodeContent} size={qrSize} />}
-        </View>
-        <View style={{ marginTop: 16, alignItems: 'center' }}>
-          <Text style={styles.secondaryHeaderText}>Or use the NFC</Text>
-          <Icon style={{ marginTop: 8 }} name={'nfc'} color={'black'} size={64} />
-        </View>
-      </ScrollView>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.headerContainer}>
+        <Text style={styles.primaryHeaderText}>{headerText}</Text>
+        <Text style={styles.secondaryHeaderText}>
+          Show this QR code to access the necessary information for sharing
+        </Text>
+      </View>
+      <View style={{ height: qrContainerSize, width: qrContainerSize, ...styles.qrContainer }}>
+        { qrCodeContent && <QRCodeView value={qrCodeContent} size={qrSize} /> }
+      </View>
+      <View style={styles.bottomIconContainer}>
+        { isAndroid && <Text style={styles.secondaryHeaderText}>Or use the NFC</Text> }
+        <Icon style={{ marginTop: 8 }} name={bottomIconName} color={'black'} size={64} />
+      </View>
     </SafeAreaView>
   )
 }

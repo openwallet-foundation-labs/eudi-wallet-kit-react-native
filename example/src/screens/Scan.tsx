@@ -80,6 +80,7 @@ export const Scan: React.FC = () => {
         const message = value
         console.log('Received QR code message:', message)
 
+        EudiWallet.stopPresentation()
         EudiWallet.startRemotePresentation(message)
 
         navigation.navigate(Screens.Home)

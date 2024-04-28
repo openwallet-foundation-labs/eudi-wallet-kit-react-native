@@ -7,7 +7,7 @@ RCT_EXTERN_METHOD(initialize:(NSDictionary *)configJson
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(getDocuments:withResolver:(RCTPromiseResolveBlock)resolve
+RCT_EXTERN_METHOD(getDocuments:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(getDocumentById:(NSString *)documentId
@@ -32,7 +32,7 @@ RCT_EXTERN_METHOD(sendResponse:(NSArray *)disclosedDocuments
 
 RCT_EXTERN_METHOD(stopPresentation)
 
-RCT_EXTERN_METHOD(loadSampleData:(NSArray *)sampleDataFiles
+RCT_EXTERN_METHOD(loadSampleData:(NSString *)sampleDataFile
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 

@@ -1,4 +1,4 @@
-struct JSDocumentItem {
+struct JSDocumentItem: Codable {
     let namespace: String
     let elementIdentifier: String
 }
