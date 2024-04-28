@@ -1,7 +1,7 @@
 import EudiWalletKit
 import Foundation
 
-struct JSRequestedDocument {
+struct JSRequestedDocument: Codable {
     let documentId: String
     let docType: String
     let docName: String

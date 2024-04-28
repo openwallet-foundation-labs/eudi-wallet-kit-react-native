@@ -1,7 +1,7 @@
 import EudiWalletKit
 import Foundation
 
-struct JSDisclosedDocument {
+struct JSDisclosedDocument: Codable {
     let documentId: String
     let docType: String
     let selectedDocItems: [JSDocumentItem]

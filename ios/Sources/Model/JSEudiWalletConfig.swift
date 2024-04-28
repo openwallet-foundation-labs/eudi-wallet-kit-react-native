@@ -9,7 +9,7 @@ extension JSEudiWalletConfig {
     init(fromJson json: JSONDictionary) throws {
         let trustedReaderCertificatesPem = json["trustedReaderCertificates"] as? [String]
         let trustedReaderCertificates = try trustedReaderCertificatesPem?.map {
-            try parseCertDataFromPem(certPem: $0)
+            try CertUtils.parseCertDataFromPem(certPem: $0)
         } ?? [Data]()
         
         let openId4VpConfigJson = json["openId4VpConfig"] as? JSONDictionary

@@ -42,30 +42,37 @@ final class WalletModule: NSObject {
         }
     }
     
-    @objc(withResolver:withRejecter:)
+    @objc(getDocuments:withRejecter:)
     func getDocuments(resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
-        var result = [JSDocument]()
-        
-        let documentIds = self._walletInstance.storage.documentIds
-        let storedModels = self._walletInstance.storage.mdocModels
-        
-        for (index, storedModel) in storedModels.enumerated() {
-            guard let documentId = documentIds[index]
-            else {
-                self._logger.warning("Document ID for loaded model is null, skipping item...")
-                continue
+        do {
+            var result = [JSONDictionary]()
+            
+            let documentIds = self._walletInstance.storage.documentIds
+            let storedModels = self._walletInstance.storage.mdocModels
+            
+            for (index, storedModel) in storedModels.enumerated() {
+                guard let documentId = documentIds[index]
+                else {
+                    self._logger.warning("Document ID for loaded model is null, skipping item...")
+                    continue
+                }
+                
+                guard let model = storedModel
+                else {
+                    self._logger.warning("Loaded model is null (documentId = \(documentId), skipping item...")
+                    continue
+                }
+                
+                let documentJson = try JSDocument(id: documentId, mdocModel: model).toDictionary()
+                result.append(documentJson)
             }
             
-            guard let model = storedModel
-            else {
-                self._logger.warning("Loaded model is null (documentId = \(documentId), skipping item...")
-                continue
-            }
-            
-            result.append(JSDocument(id: documentId, mdocModel: model))
+            resolve(result)
         }
-        
-        resolve(result)
+        catch {
+            reject("Error on getting documents", error.localizedDescription, error)
+        }
+
     }
     
     @objc(getDocumentById:withResolver:withRejecter:)
@@ -73,22 +80,29 @@ final class WalletModule: NSObject {
         _ documentId: NSString,
         resolve: @escaping RCTPromiseResolveBlock,
         reject: @escaping RCTPromiseRejectBlock) {
-            let documentId = documentId as String
-            
-            guard let documentIndex = self._walletInstance.storage.documentIds.firstIndex(of: documentId)
-            else {
-                self._logger.warning("Cannot find document index to delete (documentId = \(documentId)), returning empty result...")
-                resolve(nil)
-                return
+            do {
+                let documentId = documentId as String
+                
+                guard let documentIndex = self._walletInstance.storage.documentIds.firstIndex(of: documentId)
+                else {
+                    self._logger.warning("Cannot find document index to delete (documentId = \(documentId)), returning empty result...")
+                    resolve(nil)
+                    return
+                }
+                
+                guard let model = self._walletInstance.storage.getDocumentModel(index: documentIndex)
+                else {
+                    resolve(nil)
+                    return
+                }
+                
+                let result = try JSDocument(id: documentId, mdocModel: model).toDictionary()
+                resolve(result)
             }
-            
-            guard let model = self._walletInstance.storage.getDocumentModel(index: documentIndex)
-            else {
-                resolve(nil)
-                return
+            catch {
+                reject("Error on getting document by id", error.localizedDescription, error)
             }
-            
-            resolve(JSDocument(id: documentId, mdocModel: model))
+
         }
     
     @objc(deleteDocumentById:withResolver:withRejecter:)
@@ -134,7 +148,6 @@ final class WalletModule: NSObject {
             }
         }
     
-    // TODO: Same-device use case (deeplink)
     @objc(startRemotePresentation:)
     func startRemotePresentation(_ url: NSString) {
         self.stopPresentation()
@@ -186,6 +199,7 @@ final class WalletModule: NSObject {
                 else { throw RuntimeError.error("There is no active presentation session") }
                 
                 await self._activePresentation!.sendResponse(disclosedDocuments: disclosedDocuments, onSuccess: nil, onCancel: nil)
+                resolve(nil)
             }
             catch {
                 reject("Error on sending presentation response", error.localizedDescription, error)
