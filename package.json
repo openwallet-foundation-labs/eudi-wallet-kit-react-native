@@ -49,10 +49,7 @@
     "ios",
     "android"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native.git"
-  },
+  "repository": "https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
