@@ -26,7 +26,10 @@
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
-    "!**/.*"
+    "!**/.*",
+    "package.json",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "example:start": "cd ./example && yarn start",
@@ -49,6 +52,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native",
   "author": "Alexander Shenshin <alexander.shenshin@dsr-corporation.com> (https://github.com/AlexanderShenshin)",
@@ -108,7 +114,7 @@
   },
   "release-it": {
     "git": {
-      "commitMessage": "chore: release ${version}",
+      "commitMessage": "Release ${version}",
       "tagName": "v${version}"
     },
     "npm": {
