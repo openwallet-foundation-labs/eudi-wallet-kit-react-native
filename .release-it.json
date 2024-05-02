@@ -1,0 +1,16 @@
+{
+  "git": {
+    "requireBranch": "main",
+    "commitMessage": "Release ${version}",
+    "tagName": "v${version}"
+  },
+  "hooks": {
+    "before:init": ["yarn typecheck", "yarn lint", "yarn prepare"]
+  },
+  "npm": {
+    "publish": true
+  },
+  "github": {
+    "release": true
+  }
+}

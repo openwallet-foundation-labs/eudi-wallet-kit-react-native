@@ -1,4 +1,4 @@
-import type { RequestedDocument } from 'eudi-wallet-kit-react-native'
+import type { RequestedDocument } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 
 export enum TransferEventType {
   Connecting = 'TransferConnecting',

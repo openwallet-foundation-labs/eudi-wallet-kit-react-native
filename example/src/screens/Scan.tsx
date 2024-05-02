@@ -1,7 +1,7 @@
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
+import { EudiWallet } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 import { useNavigation } from '@react-navigation/native'
-import { EudiWallet } from 'eudi-wallet-kit-react-native'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Alert, Linking, View, StyleSheet, Text } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'

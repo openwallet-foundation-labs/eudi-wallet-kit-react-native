@@ -1,5 +1,5 @@
 {
-  "name": "eudi-wallet-kit-react-native-example",
+  "name": "@openwallet-foundation/eudi-wallet-kit-react-native-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "eudi-wallet-kit-react-native": ["./src/index"]
+      "@openwallet-foundation/eudi-wallet-kit-react-native": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
