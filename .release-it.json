@@ -1,10 +1,11 @@
 {
   "git": {
+    "requireBranch": "main",
     "commitMessage": "Release ${version}",
     "tagName": "v${version}"
   },
   "hooks": {
-    "before:init": ["npm run typecheck", "npm run lint", "npm run prepare"]
+    "before:init": ["yarn typecheck", "yarn lint", "yarn prepare"]
   },
   "npm": {
     "publish": true
