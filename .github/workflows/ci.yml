@@ -1,48 +1,31 @@
-name: CI
+name: Continuous integration
+
 on:
   pull_request:
     branches:
       - main
 
 jobs:
-  lint:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Setup Node.js and install dependencies
         uses: ./.github/actions/setup
 
-      - name: Lint files
-        run: yarn lint
-
-      - name: Typecheck files
+      - name: Typecheck
         run: yarn typecheck
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Lint
+        run: yarn lint
 
-      - name: Setup
-        uses: ./.github/actions/setup
+      - name: Build library
+        run: yarn prepare
 
       - name: Run unit tests
         run: yarn test --maxWorkers=2 --coverage
-
-  build-library:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Build package
-        run: yarn prepare
 
   build-android:
     runs-on: ubuntu-latest
@@ -50,9 +33,9 @@ jobs:
       TURBO_CACHE_DIR: .turbo/android
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Setup Node.js and install dependencies
         uses: ./.github/actions/setup
 
       - name: Cache turborepo for Android
@@ -106,9 +89,9 @@ jobs:
       TURBO_CACHE_DIR: .turbo/ios
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Setup Node.js and install dependencies
         uses: ./.github/actions/setup
 
       - name: Cache turborepo for iOS
