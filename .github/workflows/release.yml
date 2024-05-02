@@ -14,9 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          # pulls all commits (needed for release-it to correctly create changelog)
-          fetch-depth: 0
 
       - name: Setup Node.js and install dependencies
         uses: ./.github/actions/setup

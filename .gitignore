@@ -56,9 +56,6 @@ npm-debug.log
 yarn-debug.log
 yarn-error.log
 
-# NPM
-.npmrc
-
 # BUCK
 buck-out/
 \.buckd/
