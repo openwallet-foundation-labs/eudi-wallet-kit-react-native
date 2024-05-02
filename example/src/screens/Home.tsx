@@ -1,4 +1,4 @@
-import { EudiWallet } from 'eudi-wallet-kit-react-native'
+import { EudiWallet } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 import React from 'react'
 import { Button, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'

@@ -9,7 +9,7 @@ React Native wrapper for EUDI wallet reference libraries:
 ## Installation
 
 ```sh
-npm install eudi-wallet-kit-react-native
+npm install @openwallet-foundation/eudi-wallet-kit-react-native
 ```
 
 ## Usage

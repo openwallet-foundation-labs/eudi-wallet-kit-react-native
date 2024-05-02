@@ -1,6 +1,6 @@
-import type { EudiWalletConfig } from 'eudi-wallet-kit-react-native'
+import type { EudiWalletConfig } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 
-import { ClientIdSchemeType } from 'eudi-wallet-kit-react-native'
+import { ClientIdSchemeType } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 
 import { EncryptionAlgorithm, EncryptionMethod } from '../../src/config/Encryption'
 

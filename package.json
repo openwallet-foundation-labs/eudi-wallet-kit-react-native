@@ -1,6 +1,6 @@
 {
-  "name": "eudi-wallet-kit-react-native",
-  "version": "0.1.0",
+  "name": "@openwallet-foundation/eudi-wallet-kit-react-native",
+  "version": "0.1.0-alpha.0",
   "description": "React Native wrapper for EUDI wallet reference libraries",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -50,9 +50,6 @@
     "android"
   ],
   "repository": "https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native.git",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "homepage": "https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native",
   "author": "Alexander Shenshin <alexander.shenshin@dsr-corporation.com> (https://github.com/AlexanderShenshin)",
   "dependencies": {
@@ -108,23 +105,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "Release ${version}",
-      "tagName": "v${version}"
-    },
-    "npm": {
-      "publish": true
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
-    }
   },
   "react-native-builder-bob": {
     "source": "src",

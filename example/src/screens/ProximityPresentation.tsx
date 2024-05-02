@@ -1,7 +1,7 @@
 import type { MainTabStackParams, Screens } from '../navigation/types'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 
-import { EudiWallet, TransferEventType } from 'eudi-wallet-kit-react-native'
+import { EudiWallet, TransferEventType } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, useWindowDimensions, View, SafeAreaView, Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'

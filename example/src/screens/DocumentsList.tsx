@@ -1,4 +1,4 @@
-import { EudiWallet, type Document } from 'eudi-wallet-kit-react-native'
+import { EudiWallet, type Document } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 import React, { useEffect, useState } from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 

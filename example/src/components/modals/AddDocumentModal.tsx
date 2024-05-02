@@ -1,4 +1,4 @@
-import { EudiWallet } from 'eudi-wallet-kit-react-native'
+import { EudiWallet } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 import React, { useCallback, useState } from 'react'
 import { Button, Modal, StyleSheet, Text, View, SafeAreaView } from 'react-native'
 

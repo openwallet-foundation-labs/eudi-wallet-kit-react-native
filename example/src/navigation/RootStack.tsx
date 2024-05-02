@@ -1,6 +1,10 @@
+import {
+  type DisclosedDocument,
+  EudiWallet,
+  TransferEventType,
+} from '@openwallet-foundation/eudi-wallet-kit-react-native'
 import { useNavigation } from '@react-navigation/native'
 import { createNativeStackNavigator, type NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { type DisclosedDocument, EudiWallet, TransferEventType } from 'eudi-wallet-kit-react-native'
 import React, { useEffect, useState } from 'react'
 import { Alert } from 'react-native'
 
