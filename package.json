@@ -49,7 +49,10 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native.git"
+  },
   "homepage": "https://github.com/openwallet-foundation-labs/eudi-wallet-kit-react-native",
   "author": "Alexander Shenshin <alexander.shenshin@dsr-corporation.com> (https://github.com/AlexanderShenshin)",
   "dependencies": {
