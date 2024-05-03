@@ -7,7 +7,7 @@
     "before:init": ["yarn typecheck", "yarn lint", "yarn prepare"]
   },
   "npm": {
-    "publish": true
+    "publish": false
   },
   "github": {
     "release": true
