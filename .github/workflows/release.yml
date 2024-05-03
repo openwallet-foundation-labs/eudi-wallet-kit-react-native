@@ -17,6 +17,7 @@ jobs:
         with:
           # pulls all commits, needed for proper changelog generation
           fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Setup Node.js and install dependencies
         uses: ./.github/actions/setup
