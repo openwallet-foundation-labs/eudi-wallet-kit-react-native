@@ -1,7 +1,7 @@
 {
   "git": {
     "requireBranch": "main",
-    "commitMessage": "Release ${version}",
+    "commitMessage": "v${version}",
     "tagName": "v${version}"
   },
   "hooks": {
