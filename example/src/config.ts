@@ -39,6 +39,6 @@ export const walletConfig: EudiWalletConfig = {
       },
     ],
   },
-  openId4VciConfig: { clientId: 'wallet-demo', issuerUrl: 'https://issuer.eudiw.dev/oidc' },
+  openId4VciConfig: { clientId: 'wallet-dev', issuerUrl: 'https://dev.issuer.eudiw.dev' },
   trustedReaderCertificates: [TRUSTED_CERT_PEM],
 }

@@ -312,10 +312,10 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
     scope.launch(Dispatchers.Main) {
       showBiometricPrompt(
         activity = reactContext.currentActivity as FragmentActivity,
-        title = "Confirm with biometry",
-        subtitle = "Biometry confirmation is required to proceed",
+        title = "Confirm action",
+        subtitle = "User authentication is required to proceed",
         cryptoObject = cryptoObject,
-        userAuthenticationTypes = setOf(UserAuthenticationType.BIOMETRIC),
+        userAuthenticationTypes = setOf(UserAuthenticationType.BIOMETRIC, UserAuthenticationType.LSKF),
         requireConfirmation = false,
         onSuccess = onSuccess,
         onCanceled = onCanceled,
