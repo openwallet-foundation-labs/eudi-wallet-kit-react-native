@@ -1,8 +1,10 @@
 import type { EudiWalletConfig } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 
-import { ClientIdSchemeType } from '@openwallet-foundation/eudi-wallet-kit-react-native'
-
-import { EncryptionAlgorithm, EncryptionMethod } from '../../src/config/Encryption'
+import {
+  ClientIdSchemeType,
+  EncryptionAlgorithm,
+  EncryptionMethod,
+} from '@openwallet-foundation/eudi-wallet-kit-react-native'
 
 const TRUSTED_CERT_PEM = `-----BEGIN CERTIFICATE-----
 MIIDHTCCAqOgAwIBAgIUVqjgtJqf4hUYJkqdYzi+0xwhwFYwCgYIKoZIzj0EAwMw
