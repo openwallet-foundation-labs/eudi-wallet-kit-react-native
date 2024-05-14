@@ -1,6 +1,7 @@
 import MdocDataModel18013
 import SwiftCBOR
 import OrderedCollections
+import AnyCodable
 
 struct JSDocument: Encodable {
     let id: String
