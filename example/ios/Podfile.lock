@@ -3,7 +3,7 @@ PODS:
   - boost (1.83.0)
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
-  - eudi-wallet-kit-react-native (0.1.0):
+  - eudi-wallet-kit-react-native (0.1.1):
     - AnyCodable-FlightSchool
     - glog
     - RCT-Folly (= 2022.05.16.00)
@@ -1365,7 +1365,7 @@ SPEC CHECKSUMS:
   boost: d3f49c53809116a5d38da093a8aa78bf551aed09
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: fea03f2699887d960129cc54bba7e52542b6f953
-  eudi-wallet-kit-react-native: 8cc5cbe3091048007ab126cb3ab088e72ca8d8a5
+  eudi-wallet-kit-react-native: 3f000d45231977a3615991e7c8e23c8adf0378ac
   FBLazyVector: f64d1e2ea739b4d8f7e4740cde18089cd97fe864
   FBReactNativeSpec: 9f2b8b243131565335437dba74923a8d3015e780
   Flipper: c7a0093234c4bdd456e363f2f19b2e4b27652d44
