@@ -1,4 +1,5 @@
 {
+  "originHash" : "340eabe0ef75fd45879095e0bd00d88e220c03223370ffef8cd37f242ffa2bc8",
   "pins" : [
     {
       "identity" : "blueecc",
@@ -217,5 +218,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

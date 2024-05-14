@@ -29,7 +29,7 @@ export const RootStack: React.FC = () => {
     if (!isWalletInitialized) return
 
     const listenerId = EudiWallet.addTransferEventListener((event) => {
-      console.log(`Received transfer event: ${event.type}`)
+      console.log(`Received transfer event with type: ${event.type}`)
 
       if (event.type === TransferEventType.RequestReceived) {
         const requestedDocs = event.requestedDocuments
