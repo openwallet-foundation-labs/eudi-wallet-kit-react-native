@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 
 
-// Based on OWF implementation: https://github.com/openwallet-foundation-labs/identity-credential/blob/main/wallet/src/main/java/com/android/identity_credential/wallet/BiometricUserAuthPrompt.kt
+// Based on OWF Labs Identity Credential implementation: https://github.com/openwallet-foundation-labs/identity-credential/blob/main/wallet/src/main/java/com/android/identity_credential/wallet/BiometricUserAuthPrompt.kt
 
 /**
  * Prompts user for authentication, and calls the provided functions when authentication is
@@ -158,9 +158,5 @@ private class BiometricUserAuthPrompt(
     } else {
       biometricPrompt.authenticate(lskfPromptInfo)
     }
-  }
-
-  private fun resourceString(id: Int, vararg text: String): String {
-    return activity.applicationContext.resources.getString(id, *text)
   }
 }
