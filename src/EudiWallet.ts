@@ -1,6 +1,6 @@
 import type { EudiWalletConfig } from './config'
 import type { TransferEventListener } from './events'
-import type { DisclosedDocument, Document } from './model'
+import type { DisclosedDocument, Document, DocumentOffer, IssueDocumentResult } from './model'
 
 import { NativeModules, Platform } from 'react-native'
 
@@ -29,8 +29,20 @@ export abstract class EudiWallet {
     return EudiWalletModule.deleteDocumentById(documentId)
   }
 
-  public static issueDocument(docType: string): Promise<string> {
-    return EudiWalletModule.issueDocument(docType)
+  public static issueDocumentByDocType(docType: string): Promise<IssueDocumentResult> {
+    return EudiWalletModule.issueDocumentByDocType(docType)
+  }
+
+  public static issueDocumentByOfferUri(offerUri: string): Promise<IssueDocumentResult> {
+    return EudiWalletModule.issueDocumentByOfferUri(offerUri)
+  }
+
+  public static resolveDocumentOffer(offerUri: string): Promise<DocumentOffer> {
+    return EudiWalletModule.resolveDocumentOffer(offerUri)
+  }
+
+  public static resumeOpenId4VciWithAuthorization(uri: string) {
+    EudiWalletModule.resumeOpenId4VciWithAuthorization(uri)
   }
 
   public static startRemotePresentation(url: string) {

@@ -7,7 +7,9 @@ import com.dsr.eudi.walletkit.reactnative.biometry.UserAuthenticationType
 import com.dsr.eudi.walletkit.reactnative.biometry.showBiometricPrompt
 import com.dsr.eudi.walletkit.reactnative.model.JSDisclosedDocument
 import com.dsr.eudi.walletkit.reactnative.model.JSDocument
+import com.dsr.eudi.walletkit.reactnative.model.JSDocumentOffer
 import com.dsr.eudi.walletkit.reactnative.model.JSEudiWalletConfig
+import com.dsr.eudi.walletkit.reactnative.model.JSIssueDocumentResult
 import com.dsr.eudi.walletkit.reactnative.model.JSTransferEvent
 import com.dsr.eudi.walletkit.reactnative.utils.CertUtils
 import com.dsr.eudi.walletkit.reactnative.utils.JsonUtils
@@ -27,7 +29,10 @@ import eu.europa.ec.eudi.iso18013.transfer.response.Response
 import eu.europa.ec.eudi.wallet.EudiWallet
 import eu.europa.ec.eudi.wallet.EudiWalletConfig
 import eu.europa.ec.eudi.wallet.document.DeleteDocumentResult
-import eu.europa.ec.eudi.wallet.document.issue.IssueDocumentResult
+import eu.europa.ec.eudi.wallet.issue.openid4vci.IssueEvent
+import eu.europa.ec.eudi.wallet.issue.openid4vci.Offer
+import eu.europa.ec.eudi.wallet.issue.openid4vci.OfferResult
+import eu.europa.ec.eudi.wallet.issue.openid4vci.OpenId4VciManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -61,7 +66,7 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
           config.userAuthenticationRequired?.let { userAuthenticationRequired(it) }
           config.userAuthenticationTimeOut?.let { userAuthenticationTimeOut(it.toLong()) }
           config.verifyMsoPublicKey?.let { verifyMsoPublicKey(it) }
-          config.openId4VciConfig?.let { openId4VciConfig(it.toOpenId4VciConfig()) }
+          config.openId4VciConfig?.let { openId4VciConfig(openId4VciConfig = it.toOpenId4VciConfig()) }
           config.openId4VpConfig?.let { openId4VpConfig(it.toOpenId4VpConfig()) }
           config.trustedReaderCertificates?.let {
             val trustedCerts = it.map { encodedCert -> CertUtils.createX509CertificateFromPem(encodedCert) }
@@ -118,8 +123,8 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
     scope.launch {
       try {
         val document = EudiWallet.getDocumentById(documentId)
-        val result = if(document != null) JsonUtils.convertObjectToMap(JSDocument.fromDocument(document)) else null
-        promise.resolve(result)
+        val resultMap = if(document != null) JsonUtils.convertObjectToMap(JSDocument.fromDocument(document)) else null
+        promise.resolve(resultMap)
       }
       catch (error: Throwable) {
         promise.reject(
@@ -156,32 +161,11 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
   }
 
   @ReactMethod
-  fun issueDocument(docType: String, promise: Promise) {
+  fun issueDocumentByDocType(docType: String, promise: Promise) {
     scope.launch {
       try {
-        val handleSuccess = { documentId: String ->
-          promise.resolve(documentId)
-        }
-
-        val handleError = { error: Throwable ->
-          val errorMessage = error.localizedMessage ?: "Unknown error"
-          promise.reject(MODULE_NAME, "Error on issuing document: $errorMessage")
-        }
-
-        EudiWallet.issueDocument(docType, null, callback = { result: IssueDocumentResult ->
-          when (result) {
-            is IssueDocumentResult.Success -> handleSuccess(result.documentId)
-            is IssueDocumentResult.Failure -> handleError(result.error)
-            is IssueDocumentResult.UserAuthRequired -> {
-              authenticateWithBiometry(
-                result.cryptoObject,
-                onSuccess = { result.resume() },
-                onCanceled = { handleError(Error("Cancelled by user")) },
-                onError = handleError
-              )
-            }
-          }
-        })
+        val issueDocumentEventListener = this@WalletModule.createIssueDocumentEventListener(promise)
+        EudiWallet.issueDocumentByDocType(docType, null, onEvent = issueDocumentEventListener)
       }
       catch (error: Throwable) {
         promise.reject(
@@ -191,6 +175,59 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
         )
       }
     }
+  }
+
+  @ReactMethod
+  fun issueDocumentByOfferUri(offerUri: String, promise: Promise) {
+    scope.launch {
+      try {
+        val issueDocumentEventListener = this@WalletModule.createIssueDocumentEventListener(promise)
+        EudiWallet.issueDocumentByOfferUri(offerUri, null, onEvent = issueDocumentEventListener)
+      }
+      catch (error: Throwable) {
+        promise.reject(
+          MODULE_NAME,
+          "Error on issuing document: ${error.message}",
+          error
+        )
+      }
+    }
+  }
+
+  @ReactMethod
+  fun resolveDocumentOffer(offerUri: String, promise: Promise) {
+    scope.launch {
+      try {
+        val handleSuccess = { offer: Offer ->
+          val resultMap = JsonUtils.convertObjectToMap(JSDocumentOffer.fromDocumentOffer(offer))
+          promise.resolve(resultMap)
+        }
+
+        val handleError = { error: Throwable ->
+          val errorMessage = error.localizedMessage ?: "Unknown error"
+          promise.reject(MODULE_NAME, "Error on resolving document offer: $errorMessage")
+        }
+
+        EudiWallet.resolveDocumentOffer(offerUri, null, onResult = { result ->
+          when(result) {
+            is OfferResult.Success -> handleSuccess(result.offer)
+            is OfferResult.Failure -> handleError(result.error)
+          }
+        })
+      }
+      catch (error: Throwable) {
+        promise.reject(
+          MODULE_NAME,
+          "Error on resolving document offer: ${error.message}",
+          error
+        )
+      }
+    }
+  }
+
+  @ReactMethod
+  fun resumeOpenId4VciWithAuthorization(uri: String) {
+    EudiWallet.resumeOpenId4VciWithAuthorization(uri)
   }
 
   @ReactMethod
@@ -301,6 +338,44 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
     }
 
     EudiWallet.addTransferEventListener(eventListener)
+  }
+
+  private fun createIssueDocumentEventListener(promise: Promise): OpenId4VciManager.OnIssueEvent {
+    var documentCount = 0
+
+    val handleSuccess = { documentIds: List<String> ->
+      val result = JSIssueDocumentResult(
+        totalCount = documentCount,
+        issuedCount = documentIds.size,
+        issuedDocumentIds = documentIds
+      )
+      val resultMap = JsonUtils.convertObjectToMap(result)
+      promise.resolve(resultMap)
+    }
+
+    val handleError = { error: Throwable ->
+      val errorMessage = error.localizedMessage ?: "Unknown error"
+      promise.reject(MODULE_NAME, "Error on issuing document: $errorMessage")
+    }
+
+    return OpenId4VciManager.OnIssueEvent { event: IssueEvent ->
+      when (event) {
+        is IssueEvent.Started -> { documentCount = event.total }
+        is IssueEvent.Finished -> handleSuccess(event.issuedDocuments)
+        is IssueEvent.Failure -> handleError(event.cause)
+        is IssueEvent.DocumentRequiresUserAuth -> {
+          authenticateWithBiometry(
+            event.cryptoObject,
+            onSuccess = { event.resume() },
+            onCanceled = { handleError(Error("Cancelled by user")) },
+            onError = handleError
+          )
+        }
+        // Ignore events related to specific documents
+        is IssueEvent.DocumentIssued -> {}
+        is IssueEvent.DocumentFailed -> {}
+      }
+    }
   }
 
   private fun authenticateWithBiometry(
