@@ -1873,16 +1873,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@craftzdog/react-native-buffer@npm:^6.0.5":
-  version: 6.0.5
-  resolution: "@craftzdog/react-native-buffer@npm:6.0.5"
-  dependencies:
-    ieee754: ^1.2.1
-    react-native-quick-base64: ^2.0.5
-  checksum: 921b8bc7f84778e355e81e475792399276d611a346a7e51b6266a45cf4aa82194beb3a8106af796ed143d958c8476070c59e3720c0eec0a3c31e368fbb08b350
-  languageName: node
-  linkType: hard
-
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -2564,7 +2554,6 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
-    "@craftzdog/react-native-buffer": ^6.0.5
     "@react-native/babel-preset": 0.73.21
     "@react-native/metro-config": 0.73.5
     "@react-native/typescript-config": 0.73.1
@@ -11544,7 +11533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-quick-base64@npm:^2.0.5, react-native-quick-base64@npm:^2.0.8":
+"react-native-quick-base64@npm:^2.0.8":
   version: 2.1.2
   resolution: "react-native-quick-base64@npm:2.1.2"
   dependencies:

@@ -8,7 +8,6 @@
     "ios": "react-native run-ios"
   },
   "dependencies": {
-    "@craftzdog/react-native-buffer": "^6.0.5",
     "@react-navigation/bottom-tabs": "^6.5.14",
     "@react-navigation/native": "^6.1.12",
     "@react-navigation/native-stack": "^6.9.20",
