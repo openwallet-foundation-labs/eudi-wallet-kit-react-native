@@ -7,6 +7,7 @@ import { Home, ProximityPresentation, Scan } from '../screens'
 
 import { DocumentsStack } from './DocumentsStack'
 import { type MainTabStackParams, Screens, Stacks } from './types'
+import { Platform } from 'react-native'
 
 const TAB_ICON_SIZE = 32
 
@@ -39,7 +40,7 @@ export const MainTabStack: React.FC = () => {
         component={ProximityPresentation}
         options={{
           tabBarIcon: ({ color }) => <Icon name={'bluetooth-transfer'} color={color} size={TAB_ICON_SIZE} />,
-          tabBarLabel: 'Show QR/Tap',
+          tabBarLabel: Platform.OS === 'android' ? 'Show QR/Tap' : 'Show QR',
         }}
         listeners={({ navigation }) => ({
           tabPress: async (event) => {

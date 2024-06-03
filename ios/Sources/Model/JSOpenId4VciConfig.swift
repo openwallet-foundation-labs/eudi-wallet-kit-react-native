@@ -1,7 +1,7 @@
 struct JSOpenId4VciConfig {
     let issuerUrl: String?
     let clientId: String?
-    let redirectUri: String?
+    let authFlowRedirectUri: String?
 }
 
 extension JSOpenId4VciConfig {
@@ -9,7 +9,7 @@ extension JSOpenId4VciConfig {
         self.init(
             issuerUrl: json["issuerUrl"] as? String,
             clientId: json["clientId"] as? String,
-            redirectUri: json["redirectUri"] as? String
+            authFlowRedirectUri: json["authFlowRedirectUri"] as? String
         )
     }
 }

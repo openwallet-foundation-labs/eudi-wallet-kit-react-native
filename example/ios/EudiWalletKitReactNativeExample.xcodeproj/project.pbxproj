@@ -31,9 +31,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		423CB7196EACF449232E2312 /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DC3C10BEA88F484A60C51E /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a */; };
+		727B3698CD6574EEBB164630 /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EA7306A007620DFFE685F2 /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		FB65B82E3A516DEFA1736C47 /* libPods-EudiWalletKitReactNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E1DEBBD5B21B7F59B07CBA /* libPods-EudiWalletKitReactNativeExample.a */; };
+		C34C3F32481221DE9C3C4DD9 /* libPods-EudiWalletKitReactNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CC4571F785ABBB55426644 /* libPods-EudiWalletKitReactNativeExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00CC4571F785ABBB55426644 /* libPods-EudiWalletKitReactNativeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EudiWalletKitReactNativeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356EE1AD99517003FC87E /* EudiWalletKitReactNativeExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EudiWalletKitReactNativeExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* EudiWalletKitReactNativeExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EudiWalletKitReactNativeExampleTests.m; sourceTree = "<group>"; };
@@ -79,13 +80,12 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = EudiWalletKitReactNativeExample/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = EudiWalletKitReactNativeExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EudiWalletKitReactNativeExample/main.m; sourceTree = "<group>"; };
-		51BB003759673E66C1FAC854 /* Pods-EudiWalletKitReactNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNativeExample.debug.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
+		1725BC130ACC1702BDF56910 /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		477D387D0C31B9D1EACB2E70 /* Pods-EudiWalletKitReactNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNativeExample.debug.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EudiWalletKitReactNativeExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		90FD55A9FC2E9CC650399AEA /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		92E1DEBBD5B21B7F59B07CBA /* libPods-EudiWalletKitReactNativeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EudiWalletKitReactNativeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A87CA5742F3AA10A68C36A9A /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		AB6895572A9B80BADF93A368 /* Pods-EudiWalletKitReactNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNativeExample.release.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample.release.xcconfig"; sourceTree = "<group>"; };
-		D4DC3C10BEA88F484A60C51E /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B7F4C6504696CE709ABB45 /* Pods-EudiWalletKitReactNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNativeExample.release.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample.release.xcconfig"; sourceTree = "<group>"; };
+		D1E86DA98CE4EF47911ACBAF /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		E9EA7306A007620DFFE685F2 /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				423CB7196EACF449232E2312 /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a in Frameworks */,
+				727B3698CD6574EEBB164630 /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB65B82E3A516DEFA1736C47 /* libPods-EudiWalletKitReactNativeExample.a in Frameworks */,
+				C34C3F32481221DE9C3C4DD9 /* libPods-EudiWalletKitReactNativeExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,8 +174,8 @@
 				05E047282BC6FEA90092DE0E /* CoreAudio.framework */,
 				05E047262BC6FE860092DE0E /* libeudi-wallet-kit-react-native.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				92E1DEBBD5B21B7F59B07CBA /* libPods-EudiWalletKitReactNativeExample.a */,
-				D4DC3C10BEA88F484A60C51E /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a */,
+				00CC4571F785ABBB55426644 /* libPods-EudiWalletKitReactNativeExample.a */,
+				E9EA7306A007620DFFE685F2 /* libPods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,10 +215,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				51BB003759673E66C1FAC854 /* Pods-EudiWalletKitReactNativeExample.debug.xcconfig */,
-				AB6895572A9B80BADF93A368 /* Pods-EudiWalletKitReactNativeExample.release.xcconfig */,
-				90FD55A9FC2E9CC650399AEA /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig */,
-				A87CA5742F3AA10A68C36A9A /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig */,
+				477D387D0C31B9D1EACB2E70 /* Pods-EudiWalletKitReactNativeExample.debug.xcconfig */,
+				81B7F4C6504696CE709ABB45 /* Pods-EudiWalletKitReactNativeExample.release.xcconfig */,
+				1725BC130ACC1702BDF56910 /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig */,
+				D1E86DA98CE4EF47911ACBAF /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -230,12 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EudiWalletKitReactNativeExampleTests" */;
 			buildPhases = (
-				8BE95B7B5E87C8684E5EFAF4 /* [CP] Check Pods Manifest.lock */,
+				AC7E696844E76D2C9610B982 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				A3C14E58794E951BEBDA931D /* [CP] Embed Pods Frameworks */,
-				F61881FDE94E0E40E0DCF7B4 /* [CP] Copy Pods Resources */,
+				562ABC989B9A1BE1BE1C9774 /* [CP] Embed Pods Frameworks */,
+				DA965D0C68F80C8321F6B6BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,13 +251,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "EudiWalletKitReactNativeExample" */;
 			buildPhases = (
-				68292A67511005405B03EEEC /* [CP] Check Pods Manifest.lock */,
+				5F31505FF16F6FEA07323B70 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				A23A43CF8979632DF69D167F /* [CP] Embed Pods Frameworks */,
-				0061BD78D2D9D39B1358046C /* [CP] Copy Pods Resources */,
+				4DD83453C460C6D287EBFCC2 /* [CP] Embed Pods Frameworks */,
+				1DAE34AEAA400ED53D8EE8B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,23 +344,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0061BD78D2D9D39B1358046C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,7 +360,58 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		68292A67511005405B03EEEC /* [CP] Check Pods Manifest.lock */ = {
+		1DAE34AEAA400ED53D8EE8B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DD83453C460C6D287EBFCC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		562ABC989B9A1BE1BE1C9774 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F31505FF16F6FEA07323B70 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -399,7 +433,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8BE95B7B5E87C8684E5EFAF4 /* [CP] Check Pods Manifest.lock */ = {
+		AC7E696844E76D2C9610B982 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -421,41 +455,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A23A43CF8979632DF69D167F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample/Pods-EudiWalletKitReactNativeExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A3C14E58794E951BEBDA931D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests/Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F61881FDE94E0E40E0DCF7B4 /* [CP] Copy Pods Resources */ = {
+		DA965D0C68F80C8321F6B6BA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -505,7 +505,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90FD55A9FC2E9CC650399AEA /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig */;
+			baseConfigurationReference = 1725BC130ACC1702BDF56910 /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = RR27SN59Q7;
@@ -533,7 +533,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A87CA5742F3AA10A68C36A9A /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig */;
+			baseConfigurationReference = D1E86DA98CE4EF47911ACBAF /* Pods-EudiWalletKitReactNativeExample-EudiWalletKitReactNativeExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -558,7 +558,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51BB003759673E66C1FAC854 /* Pods-EudiWalletKitReactNativeExample.debug.xcconfig */;
+			baseConfigurationReference = 477D387D0C31B9D1EACB2E70 /* Pods-EudiWalletKitReactNativeExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -581,7 +581,7 @@
 					"-l\"SiopOpenID4VP.o\"",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.EudiWalletKitReactNativeExample;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.EudiWalletKitReactNativeExample1;
 				PRODUCT_NAME = EudiWalletKitReactNativeExample;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -592,7 +592,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB6895572A9B80BADF93A368 /* Pods-EudiWalletKitReactNativeExample.release.xcconfig */;
+			baseConfigurationReference = 81B7F4C6504696CE709ABB45 /* Pods-EudiWalletKitReactNativeExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -611,7 +611,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.EudiWalletKitReactNativeExample;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.EudiWalletKitReactNativeExample1;
 				PRODUCT_NAME = EudiWalletKitReactNativeExample;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -688,7 +688,11 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Wl",
+					"-ld_classic",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -756,7 +760,11 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Wl",
+					"-ld_classic",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

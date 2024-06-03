@@ -1,13 +1,15 @@
 struct JSPreregisteredVerifier {
     let clientId: String?
     let verifierApi: String?
+    let legalName: String?
 }
 
 extension JSPreregisteredVerifier {
     init(fromJson json: JSONDictionary) throws {
         self.init(
             clientId: json["clientId"] as? String, 
-            verifierApi: json["verifierApi"] as? String
+            verifierApi: json["verifierApi"] as? String,
+            legalName: json["legalName"] as? String
         )
     }
 }

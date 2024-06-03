@@ -30,7 +30,7 @@ final class WalletModule: NSObject {
                     verifierApiUri: verifierApiUrl,
                     openID4VciIssuerUrl: config.openId4VciConfig?.issuerUrl,
                     openID4VciClientId: config.openId4VciConfig?.clientId,
-                    openID4VciRedirectUri: config.openId4VciConfig?.redirectUri
+                    openID4VciRedirectUri: config.openId4VciConfig?.authFlowRedirectUri
                 )
                 try await self._walletInstance.loadDocuments()
                 
@@ -51,19 +51,7 @@ final class WalletModule: NSObject {
             let storedModels = self._walletInstance.storage.mdocModels
             
             for (index, storedModel) in storedModels.enumerated() {
-                guard let documentId = documentIds[index]
-                else {
-                    self._logger.warning("Document ID for loaded model is null, skipping item...")
-                    continue
-                }
-                
-                guard let model = storedModel
-                else {
-                    self._logger.warning("Loaded model is null (documentId = \(documentId), skipping item...")
-                    continue
-                }
-                
-                let documentJson = try JSDocument(id: documentId, mdocModel: model).toDictionary()
+                let documentJson = try JSDocument(id: documentIds[index], mdocModel: storedModel).toDictionary()
                 result.append(documentJson)
             }
             
@@ -130,23 +118,74 @@ final class WalletModule: NSObject {
             }
         }
     
-    @objc(issueDocument:withResolver:withRejecter:)
-    func issueDocument(
+    @objc(issueDocumentByDocType:withResolver:withRejecter:)
+    func issueDocumentByDocType(
         _ docType: NSString,
         resolve: @escaping RCTPromiseResolveBlock,
-        reject: @escaping RCTPromiseRejectBlock) {
-            let docType = docType as String
-            
-            Task {
-                do {
-                    let issuedDocument = try await self._walletInstance.issueDocument(docType: docType)
-                    resolve(issuedDocument.id)
-                }
-                catch {
-                    reject("Error on issuing document with type \(docType)", error.localizedDescription, error)
-                }
+        reject: @escaping RCTPromiseRejectBlock) 
+    {
+        let docType = docType as String
+        
+        Task {
+            do {
+                let issuedDocument = try await self._walletInstance.issueDocument(docType: docType)
+                resolve(issuedDocument.id)
+            }
+            catch {
+                reject("Error on issuing document with type \(docType)", String(describing: error), error)
             }
         }
+    }
+    
+    @objc(issueDocumentByOfferUri:withResolver:withRejecter:)
+    func issueDocumentByOfferUri(
+        _ offerUri: NSString,
+        resolve: @escaping RCTPromiseResolveBlock,
+        reject: @escaping RCTPromiseRejectBlock) 
+    {
+        let offerUri = offerUri as String
+        
+        Task {
+            do {
+                let offerDocTypes = try await self._walletInstance.resolveOfferUrlDocTypes(uriOffer: offerUri)
+                let issuedDocuments = try await self._walletInstance.issueDocumentsByOfferUrl(offerUri: offerUri, docTypes: offerDocTypes)
+                
+                let result = JSIssueDocumentResult(
+                    totalCount: offerDocTypes.count,
+                    issuedCount: issuedDocuments.count,
+                    issuedDocumentIds: issuedDocuments.map { $0.id }
+                )
+                resolve(result)
+            }
+            catch {
+                reject("Error on issuing documents by offer URI \(offerUri)", error.localizedDescription, error)
+            }
+        }
+    }
+    
+    @objc(resolveDocumentOffer:withResolver:withRejecter:)
+    func resolveDocumentOffer(
+        _ offerUri: NSString,
+        resolve: @escaping RCTPromiseResolveBlock,
+        reject: @escaping RCTPromiseRejectBlock)
+    {
+        let offerUri = offerUri as String
+        
+        Task {
+            do {
+                let offerDocTypes = try await self._walletInstance.resolveOfferUrlDocTypes(uriOffer: offerUri)
+                
+                let result = JSDocumentOffer(
+                    issuerName: offerDocTypes[0].issuerName,
+                    offeredDocuments: offerDocTypes.map { JSOfferedDocument(name: $0.displayName, docType: $0.docType) }
+                )
+                resolve(result)
+            }
+            catch {
+                reject("Error on resolving document offer with URI \(offerUri)", error.localizedDescription, error)
+            }
+        }
+    }
     
     @objc(startRemotePresentation:)
     func startRemotePresentation(_ url: NSString) {

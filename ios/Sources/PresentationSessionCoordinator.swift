@@ -64,7 +64,7 @@ final class PresentationSessionCoordinator {
             return
         }
         
-        let deviceEngagementBase64 = deviceEngagement.base64URLEncodedString()
+        let deviceEngagementBase64 = deviceEngagement.base64URLUnescaped()
         ProxyEventsModule.sendEvent(event: JSTransferEvent.QrEngagementReady(qrCodeContent: deviceEngagementBase64))
     }
     
