@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
+import { Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { requestBlePermissions } from '../BleHelpers'
@@ -7,7 +8,6 @@ import { Home, ProximityPresentation, Scan } from '../screens'
 
 import { DocumentsStack } from './DocumentsStack'
 import { type MainTabStackParams, Screens, Stacks } from './types'
-import { Platform } from 'react-native'
 
 const TAB_ICON_SIZE = 32
 

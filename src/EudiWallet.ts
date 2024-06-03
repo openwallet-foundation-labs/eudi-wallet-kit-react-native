@@ -43,7 +43,7 @@ export abstract class EudiWallet {
 
   public static resumeOpenId4VciWithAuthorization(uri: string) {
     // No-op on iOS
-    if(Platform.OS === 'ios') return
+    if (Platform.OS === 'ios') return
 
     EudiWalletModule.resumeOpenId4VciWithAuthorization(uri)
   }

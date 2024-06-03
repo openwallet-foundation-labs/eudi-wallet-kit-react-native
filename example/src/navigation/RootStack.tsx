@@ -29,7 +29,6 @@ export const RootStack: React.FC = () => {
     if (!isWalletInitialized) return
 
     Linking.addEventListener('url', async ({ url }) => {
-      console.log('Got deeplink', url)
       if (url.includes('authorize')) {
         EudiWallet.resumeOpenId4VciWithAuthorization(url)
       }

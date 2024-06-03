@@ -218,7 +218,7 @@ class WalletModule(private val reactContext: ReactApplicationContext) :
       catch (error: Throwable) {
         promise.reject(
           MODULE_NAME,
-          "Error on resolving document offer: ${error.message}",
+          "Error on resolving document offer with URI ${offerUri}: ${error.message}",
           error
         )
       }

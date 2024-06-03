@@ -1,6 +1,5 @@
-import { Buffer } from '@craftzdog/react-native-buffer'
 import React, { useState } from 'react'
-import { StyleSheet, View, Text, Platform, Image } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import QRCode from 'react-native-qrcode-svg'
 
 const styles = StyleSheet.create({
