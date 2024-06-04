@@ -6,7 +6,7 @@ import {
 import { useNavigation } from '@react-navigation/native'
 import { createNativeStackNavigator, type NativeStackNavigationProp } from '@react-navigation/native-stack'
 import React, { useEffect, useState } from 'react'
-import { Alert } from 'react-native'
+import { Alert, Linking } from 'react-native'
 
 import { LoadingModal } from '../components/modals'
 import { walletConfig } from '../config'
@@ -24,6 +24,18 @@ export const RootStack: React.FC = () => {
   useEffect(() => {
     EudiWallet.initialize(walletConfig).then(() => setIsWalletInitialized(true))
   }, [])
+
+  useEffect(() => {
+    if (!isWalletInitialized) return
+
+    Linking.addEventListener('url', async ({ url }) => {
+      if (url.includes('authorize')) {
+        EudiWallet.resumeOpenId4VciWithAuthorization(url)
+      }
+    })
+
+    return () => Linking.removeAllListeners('url')
+  }, [isWalletInitialized])
 
   useEffect(() => {
     if (!isWalletInitialized) return

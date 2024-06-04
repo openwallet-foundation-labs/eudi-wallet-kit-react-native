@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2439F0C02FF11F8A9AFE58D2 /* Pods_EudiWalletKitReactNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21B153BFCF99EB6747BC7E9 /* Pods_EudiWalletKitReactNative.framework */; };
 		9E185DAE288EA04200381E4C /* DIDCommMessageHelpersModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E185DAD288EA04200381E4C /* DIDCommMessageHelpersModule.m */; };
 		9E185DBE288EB58500381E4C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E185DBD288EB58500381E4C /* String+Extensions.swift */; };
 		9E185DC0288EC41A00381E4C /* JSONDictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E185DBF288EC41A00381E4C /* JSONDictionary+Extensions.swift */; };
@@ -28,12 +27,9 @@
 
 /* Begin PBXFileReference section */
 		05C1DE002BB4CD9100F50FBF /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
-		0D251F5B2AB2028884961436 /* Pods-EudiWalletKitReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNative.debug.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNative/Pods-EudiWalletKitReactNative.debug.xcconfig"; sourceTree = "<group>"; };
-		4BA8EB08499BAE3064CD067D /* Pods-EudiWalletKitReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EudiWalletKitReactNative.release.xcconfig"; path = "Target Support Files/Pods-EudiWalletKitReactNative/Pods-EudiWalletKitReactNative.release.xcconfig"; sourceTree = "<group>"; };
 		9E185DAD288EA04200381E4C /* DIDCommMessageHelpersModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIDCommMessageHelpersModule.m; sourceTree = "<group>"; };
 		9E185DBD288EB58500381E4C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		9E185DBF288EC41A00381E4C /* JSONDictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDictionary+Extensions.swift"; sourceTree = "<group>"; };
-		A21B153BFCF99EB6747BC7E9 /* Pods_EudiWalletKitReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EudiWalletKitReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +38,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC0E5B171940AE1CBFCC3146 /* BuildFile in Frameworks */,
-				2439F0C02FF11F8A9AFE58D2 /* Pods_EudiWalletKitReactNative.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +47,6 @@
 		467CC0A518636197149DB90B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0D251F5B2AB2028884961436 /* Pods-EudiWalletKitReactNative.debug.xcconfig */,
-				4BA8EB08499BAE3064CD067D /* Pods-EudiWalletKitReactNative.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -65,7 +58,6 @@
 				9E185DA0288E986A00381E4C /* Extensions */,
 				9EC14DF628856B6100C97663 /* Interfaces */,
 				467CC0A518636197149DB90B /* Pods */,
-				B7840B0948E396F3FCA27F03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,14 +78,6 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
-		B7840B0948E396F3FCA27F03 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A21B153BFCF99EB6747BC7E9 /* Pods_EudiWalletKitReactNative.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,7 +85,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "EudiWalletKitReactNative" */;
 			buildPhases = (
-				2B197FAE93BBAF23D7E2332A /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -145,31 +128,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2B197FAE93BBAF23D7E2332A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EudiWalletKitReactNative-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -282,7 +240,6 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D251F5B2AB2028884961436 /* Pods-EudiWalletKitReactNative.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,7 +259,6 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BA8EB08499BAE3064CD067D /* Pods-EudiWalletKitReactNative.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

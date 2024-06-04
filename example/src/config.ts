@@ -37,10 +37,16 @@ export const walletConfig: EudiWalletConfig = {
       { type: ClientIdSchemeType.X509SanDns },
       {
         type: ClientIdSchemeType.Preregistered,
-        preregisteredVerifiers: [{ clientId: 'Verifier', verifierApi: 'https://verifier.eudiw.dev' }],
+        preregisteredVerifiers: [
+          { clientId: 'Verifier', verifierApi: 'https://verifier.eudiw.dev', legalName: 'EUDI Remote Verifier' },
+        ],
       },
     ],
   },
-  openId4VciConfig: { clientId: 'wallet-dev', issuerUrl: 'https://dev.issuer.eudiw.dev' },
+  openId4VciConfig: {
+    clientId: 'wallet-dev',
+    issuerUrl: 'https://dev.issuer.eudiw.dev',
+    authFlowRedirectUri: 'eudi-openid4ci://authorize',
+  },
   trustedReaderCertificates: [TRUSTED_CERT_PEM],
 }

@@ -38,7 +38,7 @@ export const AddDocumentModal: React.FC<Props> = ({ isVisible, onCancel }) => {
   const addDocument = async (docType: string) => {
     setInProgress(true)
     try {
-      await EudiWallet.issueDocument(docType)
+      await EudiWallet.issueDocumentByDocType(docType)
     } finally {
       setInProgress(false)
     }

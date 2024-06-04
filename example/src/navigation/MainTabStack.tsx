@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
+import { Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { requestBlePermissions } from '../BleHelpers'
@@ -39,7 +40,7 @@ export const MainTabStack: React.FC = () => {
         component={ProximityPresentation}
         options={{
           tabBarIcon: ({ color }) => <Icon name={'bluetooth-transfer'} color={color} size={TAB_ICON_SIZE} />,
-          tabBarLabel: 'Show QR/Tap',
+          tabBarLabel: Platform.OS === 'android' ? 'Show QR/Tap' : 'Show QR',
         }}
         listeners={({ navigation }) => ({
           tabPress: async (event) => {

@@ -18,7 +18,15 @@ RCT_EXTERN_METHOD(deleteDocumentById:(NSString *)documentId
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(issueDocument:(NSString *)docType
+RCT_EXTERN_METHOD(issueDocumentByDocType:(NSString *)docType
+                  withResolver:(RCTPromiseResolveBlock)resolve
+                  withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(issueDocumentByOfferUri:(NSString *)offerUri
+                  withResolver:(RCTPromiseResolveBlock)resolve
+                  withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(resolveDocumentOffer:(NSString *)offerUri
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 

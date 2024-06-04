@@ -1,4 +1,4 @@
-import type { EudiWalletEventListener } from './events'
+import type { EudiWalletEventListener, TransferEvent } from './events'
 
 import { NativeEventEmitter, NativeModules } from 'react-native'
 import uuid from 'react-native-uuid'
@@ -11,7 +11,7 @@ export abstract class EudiWalletEventManager {
   private static eventListeners: Map<string, EudiWalletEventListener> = new Map<string, EudiWalletEventListener>()
 
   public static start(): void {
-    this.nativeEventEmitter.addListener(PROXY_EVENT_TYPE, (proxyEvent: any) => {
+    this.nativeEventEmitter.addListener(PROXY_EVENT_TYPE, (proxyEvent: TransferEvent) => {
       this.eventListeners.forEach((listener) => listener(proxyEvent))
     })
   }

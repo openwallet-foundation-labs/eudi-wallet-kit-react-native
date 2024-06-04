@@ -5,6 +5,7 @@ import { EncryptionAlgorithm } from './Encryption'
 interface PreregisteredVerifierConfig {
   clientId: string
   verifierApi: string
+  legalName: string
 }
 
 export enum ClientIdSchemeType {

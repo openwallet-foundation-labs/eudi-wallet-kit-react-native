@@ -1,4 +1,6 @@
 export * from './Document'
 export * from './DocumentRequest'
+export * from './DocumentOffer'
 export * from './RequestedDocument'
 export * from './DisclosedDocument'
+export * from './IssueDocumentResult'
