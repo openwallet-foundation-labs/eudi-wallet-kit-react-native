@@ -49,8 +49,7 @@ final class PresentationSessionCoordinator {
     
     public func sendResponse(disclosedDocuments: [JSDisclosedDocument], onSuccess: ((URL?) -> Void)?, onCancel: (() -> Void)?) async {
         let itemsToSend = disclosedDocuments.reduce(into: RequestItems()) { items, document in
-            // TODO: Double-check if 'docType' will always be unique across disclosed docs
-            items[document.docType] = document.getNamespacedItems()
+            items[document.documentId] = document.getNamespacedItems()
         }
         await self._session.sendResponse(userAccepted: true, itemsToSend: itemsToSend)
     }
@@ -64,8 +63,7 @@ final class PresentationSessionCoordinator {
             return
         }
         
-        let deviceEngagementBase64 = deviceEngagement.base64URLUnescaped()
-        ProxyEventsModule.sendEvent(event: JSTransferEvent.QrEngagementReady(qrCodeContent: deviceEngagementBase64))
+        ProxyEventsModule.sendEvent(event: JSTransferEvent.QrEngagementReady(qrCodeContent: deviceEngagement))
     }
     
     private func onRequestReceived() async {
