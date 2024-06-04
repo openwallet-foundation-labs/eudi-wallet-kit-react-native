@@ -1,6 +1,6 @@
 {
   "name": "@openwallet-foundation/eudi-wallet-kit-react-native",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Native wrapper for EUDI wallet reference libraries",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
