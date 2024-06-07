@@ -6,10 +6,9 @@ import eu.europa.ec.eudi.wallet.document.Document
 import eu.europa.ec.eudi.wallet.document.nameSpacedDataJSONObject
 
 data class JSDocument(
-  val documentId: String,
+  val id: String,
   val docType: String,
   val name: String,
-  val hardwareBacked: Boolean,
   val createdAt: Double,
   val requiresUserAuth: Boolean,
   val namespacedData: Map<String, Any>,
@@ -24,7 +23,6 @@ data class JSDocument(
         document.id,
         document.docType,
         document.name,
-        document.hardwareBacked,
         document.createdAt.epochSecond.toDouble(),
         document.requiresUserAuth,
         namespacedData,
