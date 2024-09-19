@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2024 DSR Corporation, Denver, Colorado.
+ * https://www.dsr-corporation.com
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { EudiWallet } from '@openwallet-foundation/eudi-wallet-kit-react-native'
 import React, { useCallback, useState } from 'react'
 import { Button, Modal, StyleSheet, Text, View, SafeAreaView } from 'react-native'

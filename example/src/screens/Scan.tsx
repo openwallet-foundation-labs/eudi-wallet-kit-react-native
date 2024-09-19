@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2024 DSR Corporation, Denver, Colorado.
+ * https://www.dsr-corporation.com
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { EudiWallet } from '@openwallet-foundation/eudi-wallet-kit-react-native'

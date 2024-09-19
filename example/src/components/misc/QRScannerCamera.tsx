@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2024 DSR Corporation, Denver, Colorado.
+ * https://www.dsr-corporation.com
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { useIsFocused } from '@react-navigation/native'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Vibration, useWindowDimensions, type ViewStyle } from 'react-native'
