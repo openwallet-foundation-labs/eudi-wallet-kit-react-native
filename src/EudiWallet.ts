@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2024 DSR Corporation, Denver, Colorado.
+ * https://www.dsr-corporation.com
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import type { EudiWalletConfig } from './config'
 import type { TransferEventListener } from './events'
 import type { DisclosedDocument, Document, DocumentOffer, IssueDocumentResult } from './model'

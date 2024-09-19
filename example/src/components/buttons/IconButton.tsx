@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2024 DSR Corporation, Denver, Colorado.
+ * https://www.dsr-corporation.com
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from 'react'
 import { type Insets, StyleSheet, Text, type TextStyle, TouchableOpacity, type ViewStyle } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
