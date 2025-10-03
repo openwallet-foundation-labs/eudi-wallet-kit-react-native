@@ -12,6 +12,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -28,10 +32,9 @@ jobs:
       - name: Setup Node.js and install dependencies
         uses: ./.github/actions/setup
 
-      - name: Setup NPM config
-        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # anchor to the smallest npm version supporting trusted publishing
+      - name: Update npm
+        run: npm install -g npm@11.5.1
 
       - name: Setup Git user
         run: |
@@ -41,5 +44,4 @@ jobs:
       - name: Run release
         run: yarn release --ci --no-increment
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
